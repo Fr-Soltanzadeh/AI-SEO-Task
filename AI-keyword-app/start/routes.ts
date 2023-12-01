@@ -24,4 +24,4 @@ Route.get('/', async () => {
   return { hello: 'world' }
 })
 
-Route.post('/seo-keywords',"SeoControler.post")
+Route.post('/seo-keywords',"KeywordsController.create")
