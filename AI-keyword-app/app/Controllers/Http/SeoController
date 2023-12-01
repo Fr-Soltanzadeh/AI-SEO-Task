@@ -1,0 +1,15 @@
+import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import axios from 'axios'
+
+export default class ConsultationsController {
+    public async create({request, response}: HttpContextContract) {
+        const title = request.input("title");
+        const keyword_number = request.input("keyword_number", 10)
+        try{
+            
+        }catch(error){
+            console.error(error)
+            return response.status(500).json({ message: "AI service is not available now!" })
+        }
+    }
+}
