@@ -3,12 +3,13 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import OpenAI from "openai";
 
 const OPENAI_API_KEY= process.env.OPENAI_API_KEY
+const kEYWORD_NUMBER= process.env.kEYWORD_NUMBER
 
 export default class KeywordsController {
     public async create({request, response}: HttpContextContract) {
         const topic = request.input("topic");
-        const keyword_number = request.input("keyword_number", 10)
-        const content = `Identify ${keyword_number} SEO keywords related to ${topic}`
+
+        const content = `Identify ${kEYWORD_NUMBER} SEO keywords related to ${topic}`
         if (!OPENAI_API_KEY) {
             return response.status(500).json({ message: 'OpenAI API key is missing.' });
         }

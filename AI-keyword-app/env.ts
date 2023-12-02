@@ -22,4 +22,5 @@ export default Env.rules({
   DRIVE_DISK: Env.schema.enum(['local'] as const),
 	NODE_ENV: Env.schema.enum(['development', 'production', 'test'] as const),
 	OPENAI_API_KEY: Env.schema.string(),
+	kEYWORD_NUMBER: Env.schema.number(),
 })
